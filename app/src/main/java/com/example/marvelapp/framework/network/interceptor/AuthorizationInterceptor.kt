@@ -14,7 +14,7 @@ class AuthorizationInterceptor(
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
-        val requestUrl = request.url()
+        val requestUrl = request.url
 
         val ts = (calendar.timeInMillis / TIME_IN_SECONDS).toString()
         val hash = "$ts$privateKey$publicKey".md5()
